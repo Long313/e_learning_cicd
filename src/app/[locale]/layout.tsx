@@ -10,8 +10,9 @@ import { notFound } from "next/navigation";
 import { Providers } from "../../redux/provider";
 import { NextIntlClientProvider } from "next-intl";
 import { createIntl } from "react-intl";
-import messagesEn from "../../../messages/en.json";
-import messagesVi from "../../../messages/vi.json";
+import messagesEn from "../../../messages/eng.json";
+import messagesVi from "../../../messages/vie.json";
+import Header from "../components/Header/page";
 
 const messages = {
   en: messagesEn,
@@ -20,7 +21,7 @@ const messages = {
 
 const inter = Inter({ subsets: ["latin"] });
 
-const locales = ["en", "ja", "ko", "vi"];
+const locales = ["eng", "jap", "kor", "vie"];
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -37,7 +38,7 @@ interface ParamProps {
 }
 
 const intl = createIntl({
-  locale: "en",
+  locale: "vie",
   timeZone: "Asia/Ho_Chi_Minh",
 });
 
@@ -57,6 +58,7 @@ const RootLayout: React.FunctionComponent<RootLayoutProps> = ({
             messages={messages[locale]}
           >
             <div className="bg-[url('../../../public/skyNight.png')] w-full h-full">
+              <Header />
               {children}
             </div>
             <ToastContainer />

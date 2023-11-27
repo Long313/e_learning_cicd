@@ -19,6 +19,7 @@ export default function Home({
   children,
   params: { locale },
 }: RootLayoutProps) {
+  console.log("locale", locale);
   const t = useTranslations("Index");
   const router = useRouter();
   const currentUser = useSelector((state: any) => state.auth.login.currentUser);
@@ -33,7 +34,7 @@ export default function Home({
     if (tokenString) {
       const token: string = JSON.parse(tokenString);
     } else {
-      router.push("/login");
+      router.push(`/${locale}/login`);
     }
   }, []);
   return (

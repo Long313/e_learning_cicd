@@ -6,11 +6,24 @@ import { useRouter } from "next/navigation";
 import { registerUser } from "../../../service/api";
 import { REGISTER_API, STATUS_SUCCESS } from "../../../constant";
 import { toast } from "react-toastify";
+import { ReactNode } from "react";
+import { AppProps } from "next/app";
 interface TypeData {
   repeatPassword: string;
 }
+interface RootLayoutProps extends AppProps {
+  children: ReactNode;
+  params: ParamProps;
+}
 
-export default function SignUp() {
+interface ParamProps {
+  locale: string;
+}
+
+export default function SignUp({
+  children,
+  params: { locale },
+}: RootLayoutProps) {
   const router = useRouter();
   const handleRegister = async (data: TypeData) => {
     console.log("form data", data);
@@ -29,7 +42,7 @@ export default function SignUp() {
           progress: undefined,
           theme: "light",
         });
-        router.push("/login");
+        router.push(`/${locale}/login`);
       }
     } catch (err: any) {
       toast.error("🚀 Register failed!", {

@@ -437,11 +437,11 @@ export default function FormSignUp(props: any) {
             onBlur={handleCheckLangCode}
           >
             <option value="">Choose a language</option>
-            <option value="eng">English</option>
-            <option value="vie">VietNamese</option>
-            <option value="kor">Korean</option>
-            <option value="jap">Japanes</option>
-            <option value="chi">Chinese</option>
+            <option value="en">English</option>
+            <option value="vi">VietNamese</option>
+            <option value="ko">Korean</option>
+            <option value="ja">Japanes</option>
+            <option value="ch">Chinese</option>
           </select>
           <p className="text-red-400 text-[12px] mt-[2px]">
             {textError.langCode}

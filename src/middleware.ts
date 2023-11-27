@@ -2,10 +2,10 @@ import createMiddleware from "next-intl/middleware";
 
 export default createMiddleware({
   // A list of all locales that are supported
-  locales: ["en", "vi", "ko", "ja"],
+  locales: ["eng", "vie", "kor", "jap"],
 
   // Used when no locale matches
-  defaultLocale: "vi",
+  defaultLocale: "eng",
 });
 
 export const config = {
