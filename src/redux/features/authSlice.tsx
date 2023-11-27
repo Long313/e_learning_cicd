@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+"use client";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   login: {

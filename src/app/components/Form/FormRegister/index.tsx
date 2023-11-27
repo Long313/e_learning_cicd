@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import cat from "../../../../public/cat.jpg";
+import cat from "../../../../../public/cat.jpg";
 import { useState, useEffect } from "react";
 
 interface TypeTextError {

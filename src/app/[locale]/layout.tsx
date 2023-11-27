@@ -4,16 +4,14 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ReduxProvider } from "../../redux/provider";
 import { ReactNode } from "react";
 import { AppProps } from "next/app";
 import { notFound } from "next/navigation";
-import { Provider } from "react-redux";
-import { store } from "../../redux/store";
-import { NextIntlClientProvider } from 'next-intl';
-import { createIntl } from 'react-intl';
-import messagesEn from '../../../messages/en.json';
-import messagesVi from '../../../messages/vi.json';
+import { Providers } from "../../redux/provider";
+import { NextIntlClientProvider } from "next-intl";
+import { createIntl } from "react-intl";
+import messagesEn from "../../../messages/en.json";
+import messagesVi from "../../../messages/vi.json";
 
 const messages = {
   en: messagesEn,
@@ -39,8 +37,8 @@ interface ParamProps {
 }
 
 const intl = createIntl({
-  locale: 'en',
-  timeZone: 'Asia/Ho_Chi_Minh',
+  locale: "en",
+  timeZone: "Asia/Ho_Chi_Minh",
 });
 
 const RootLayout: React.FunctionComponent<RootLayoutProps> = ({
@@ -52,18 +50,18 @@ const RootLayout: React.FunctionComponent<RootLayoutProps> = ({
   return (
     <html lang={locale}>
       <body className={inter?.className}>
-        <NextIntlClientProvider
-          locale={locale}
-          timeZone={intl.timeZone}
-          messages={messages[locale]}
-        >
-          <Provider store={store}>
+        <Providers>
+          <NextIntlClientProvider
+            locale={locale}
+            timeZone={intl.timeZone}
+            messages={messages[locale]}
+          >
             <div className="bg-[url('../../../public/skyNight.png')] w-full h-full">
               {children}
             </div>
             <ToastContainer />
-          </Provider>
-        </NextIntlClientProvider>
+          </NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   );

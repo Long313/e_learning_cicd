@@ -93,7 +93,7 @@ export default function FormLogin(props: any) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-2/12 h-[700px] bg-gray-400 rounded-[20px] overflow-hidden"
+      className="w-[300px] h-[700px] bg-gray-400 rounded-[20px] overflow-hidden"
     >
       <div className="w-full h-full bg-white flex flex-col justify-center items-center p-[20px]">
         <div className="w-5/12 h-5/12 rounded-full overflow-hidden">

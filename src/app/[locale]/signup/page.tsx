@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import FormSignUp from "@/components/Form/FormRegister";
+import FormSignUp from "../../components/Form/FormRegister";
 import { useRouter } from "next/navigation";
-import { registerUser } from "../../service/api";
-import { REGISTER_API, STATUS_SUCCESS } from "../../constant";
+import { registerUser } from "../../../service/api";
+import { REGISTER_API, STATUS_SUCCESS } from "../../../constant";
 import { toast } from "react-toastify";
 interface TypeData {
   repeatPassword: string;

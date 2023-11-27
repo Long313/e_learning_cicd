@@ -1,6 +1,6 @@
 "use client";
 
-import FormLogin from "../components/Form/FormLogin";
+import FormLogin from "../../components/Form/FormLogin";
 import { LOGIN_API } from "@/constant";
 import { loginUser } from "@/redux/apiRequest";
 import { useRouter } from "next/navigation";

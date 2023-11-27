@@ -1,10 +1,24 @@
-'use client'
+"use client";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useTranslations } from "next-intl";
+import { ReactNode } from "react";
+import { AppProps } from "next/app";
 
-export default function Home() {
+interface RootLayoutProps extends AppProps {
+  children: ReactNode;
+  params: ParamProps;
+}
+
+interface ParamProps {
+  locale: string;
+}
+
+export default function Home({
+  children,
+  params: { locale },
+}: RootLayoutProps) {
   const t = useTranslations("Index");
   const router = useRouter();
   const currentUser = useSelector((state: any) => state.auth.login.currentUser);
@@ -23,8 +37,8 @@ export default function Home() {
     }
   }, []);
   return (
-    <main className="">
+    <div className="">
       <h1 className="text-white">{t("hello")}</h1>
-    </main>
+    </div>
   );
 }
