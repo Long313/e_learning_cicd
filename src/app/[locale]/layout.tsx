@@ -10,13 +10,15 @@ import { notFound } from "next/navigation";
 import { Providers } from "../../redux/provider";
 import { NextIntlClientProvider } from "next-intl";
 import { createIntl } from "react-intl";
-import messagesEn from "../../../messages/eng.json";
-import messagesVi from "../../../messages/vie.json";
+import messagesEng from "../../../messages/eng.json";
+import messagesVie from "../../../messages/vie.json";
+import messagesKor from "../../../messages/kor.json";
 import Header from "../components/Header/page";
 
 const messages = {
-  en: messagesEn,
-  vi: messagesVi,
+  eng: messagesEng,
+  vie: messagesVie,
+  kor: messagesKor,
 };
 
 const inter = Inter({ subsets: ["latin"] });

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import cat from "../../../../../public/cat.jpg";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 interface TypeTextError {
   userName: string;
@@ -13,6 +14,7 @@ interface TypeTextError {
 }
 
 export default function FormSignUp(props: any) {
+  const t = useTranslations("Index")
   const [userName, setUserName] = useState<string>("");
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
@@ -319,7 +321,7 @@ export default function FormSignUp(props: any) {
             htmlFor="userName"
             className="inline-block mt-[30px] mb-[10px]"
           >
-            UserName
+            {t("UserName")}
           </label>
           <input
             value={userName}
@@ -338,7 +340,7 @@ export default function FormSignUp(props: any) {
             htmlFor="firstName"
             className="inline-block mt-[30px] mb-[10px]"
           >
-            FirstName
+            {t("FirstName")}
           </label>
           <input
             value={firstName}
@@ -357,7 +359,7 @@ export default function FormSignUp(props: any) {
             htmlFor="lastName"
             className="inline-block mt-[30px] mb-[10px]"
           >
-            LastName
+            {t("LastName")}
           </label>
           <input
             value={lastName}
@@ -376,7 +378,7 @@ export default function FormSignUp(props: any) {
             htmlFor="password"
             className="inline-block mt-[30px] mb-[10px]"
           >
-            Password
+            {t("Password")}
           </label>
           <input
             value={password}
@@ -396,7 +398,7 @@ export default function FormSignUp(props: any) {
             htmlFor="repeat-password"
             className="inline-block mt-[30px] mb-[10px]"
           >
-            Repeat Password
+            {t("Repeat Password")}
           </label>
           <input
             value={repeatPassword}
@@ -413,7 +415,7 @@ export default function FormSignUp(props: any) {
         </div>
         <div className="w-full">
           <label htmlFor="email" className="inline-block mt-[30px] mb-[10px]">
-            Email
+            {t("Email")}
           </label>
           <input
             value={email}
@@ -428,7 +430,7 @@ export default function FormSignUp(props: any) {
         </div>
         <div className="w-full">
           <label htmlFor="" className="inline-block mt-[30px] mb-[10px]">
-            Language
+            {t("Language")}
           </label>
           <select
             className="border border-blue-300 w-full p-[5px] rounded-[5px] outline-none"
@@ -449,7 +451,7 @@ export default function FormSignUp(props: any) {
         </div>
         <div className="w-full">
           <label htmlFor="" className="inline-block mt-[30px] mb-[10px]">
-            Phone Number
+            {t("Phone Number")}
           </label>
           <div className="flex">
             <select
@@ -488,7 +490,7 @@ export default function FormSignUp(props: any) {
             }`}
             disabled={status}
           >
-            Signup
+            {t("SignUp")}
           </button>
         </div>
       </div>

@@ -1,5 +1,15 @@
 {
   "Index": {
-    "hello": "hello"
+    "hello": "hello",
+    "Email": "Email",
+    "Password": "Password",
+    "Login": "Login",
+    "UserName": "UserName",
+    "FistName": "FisrtName",
+    "LastName": "LastName",
+    "Repeat Password": "Repeat Password",
+    "Language": "Language",
+    "Phone Number": "Phone Number",
+    "SignUp": "SignUp"
   }
 }

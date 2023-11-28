@@ -5,10 +5,10 @@ export default createMiddleware({
   locales: ["eng", "vie", "kor", "jap"],
 
   // Used when no locale matches
-  defaultLocale: "eng",
+  defaultLocale: "vie",
 });
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/", "/(|vi|ko|ja|en)/:path*"],
+  matcher: ["/", "/(|vie|kor|jap|eng)/:path*"],
 };

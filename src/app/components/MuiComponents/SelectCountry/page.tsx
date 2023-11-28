@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import { useSelector } from "react-redux";
+import { handlePathName } from "../../../../common/page";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+interface CountryProps {
+  onChangeLanguage: any;
+}
 
-export default function CountrySelect() {
-  const [language, setLanguage] = useState<string | null>("eng");
+export default function CountrySelect(props: CountryProps) {
+  const router = useRouter();
+  const pathName = usePathname();
+  const languageCurrent = useSelector((state: any) => state.language.language);
+  const { onChangeLanguage } = props;
+  const handleChangeSelect = (value: string | null | undefined) => {
+    onChangeLanguage(value ?? null);
+    const newPath = handlePathName(pathName, languageCurrent);
+    router.push(`/${value}/${newPath}`);
+  };
   return (
     <div className="w-fit ml-auto">
       <Autocomplete
@@ -13,7 +29,7 @@ export default function CountrySelect() {
         options={countries}
         autoHighlight
         getOptionLabel={(option) => option.label}
-        onChange={(event, value) => setLanguage(value?.value ?? null)}
+        onChange={(event, value) => handleChangeSelect(value?.value)}
         renderOption={(props, option) => (
           <Box
             component="li"
@@ -48,7 +64,7 @@ export default function CountrySelect() {
 interface CountryType {
   code: string;
   label: string;
-  value?: string | null;
+  value?: string | null | undefined;
   suggested?: boolean;
 }
 
@@ -441,7 +457,7 @@ const countries: readonly CountryType[] = [
     code: "US",
     label: "United States",
     suggested: true,
-    value: "uns",
+    value: "eng",
   },
   { code: "UY", label: "Uruguay", value: "uru" },
   { code: "UZ", label: "Uzbekistan", value: "uzb" },
