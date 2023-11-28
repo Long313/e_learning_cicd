@@ -1,0 +1,15 @@
+{
+  "Index": {
+    "hello": "こんにちは",
+    "Email": "Email",
+    "Password": "パスワード",
+    "Login": "ログイン",
+    "UserName": "ユーザー名",
+    "FistName": "ファーストネーム",
+    "LastName": "苗字",
+    "Repeat Password": "パスワードを再度入力してください",
+    "Language": "言語",
+    "Phone Number": "電話番号",
+    "SignUp": "サインアップ"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Index": {
+    "hello": "xin chào",
+    "Email": "Email",
+    "Password": "Mật khẩu",
+    "Login": "Đăng nhập",
+    "UserName": "Tên đăng nhập",
+    "FistName": "Tên",
+    "LastName": "Họ",
+    "Repeat Password": "Nhập lại mật khẩu",
+    "Language": "Ngôn ngữ",
+    "Phone Number": "Số điện thoại",
+    "SignUp": "Đăng ký"
+  }
+}

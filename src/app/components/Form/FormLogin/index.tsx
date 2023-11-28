@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import cat from "../../../../public/cat.jpg";
+import cat from "../../../../../public/cat.jpg";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 interface TypeTextError {
   email: string;
@@ -10,6 +11,7 @@ interface TypeTextError {
 }
 
 export default function FormLogin(props: any) {
+  const t = useTranslations("Index");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [textError, setTextError] = useState<TypeTextError>({
@@ -93,7 +95,7 @@ export default function FormLogin(props: any) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-2/12 h-[700px] bg-gray-400 rounded-[20px] overflow-hidden"
+      className="w-[300px] h-[700px] bg-gray-400 rounded-[20px] overflow-hidden"
     >
       <div className="w-full h-full bg-white flex flex-col justify-center items-center p-[20px]">
         <div className="w-5/12 h-5/12 rounded-full overflow-hidden">
@@ -105,7 +107,7 @@ export default function FormLogin(props: any) {
         </div>
         <div className="w-full">
           <label htmlFor="email" className="inline-block mt-[30px] mb-[10px]">
-            Email
+            {t("Email")}
           </label>
           <input
             value={email}
@@ -123,7 +125,7 @@ export default function FormLogin(props: any) {
             htmlFor="password"
             className="inline-block mt-[30px] mb-[10px]"
           >
-            Password
+            {t("Password")}
           </label>
           <input
             value={password}
@@ -146,7 +148,7 @@ export default function FormLogin(props: any) {
             }`}
             disabled={status}
           >
-            Login
+            {t("Login")}
           </button>
         </div>
       </div>

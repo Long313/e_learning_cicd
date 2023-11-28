@@ -1,0 +1,15 @@
+{
+  "Index": {
+    "hello": "안녕하세요",
+    "Email": "Email",
+    "Password": "비밀번호",
+    "Login": "로그인",
+    "UserName": "사용자 이름",
+    "FistName": "이름",
+    "LastName": "성",
+    "Repeat Password": "비밀번호 반복",
+    "Language": "언어",
+    "Phone Number": "전화 번호",
+    "SignUp": "가입하기"
+  }
+}
