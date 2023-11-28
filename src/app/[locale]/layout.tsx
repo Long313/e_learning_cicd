@@ -59,7 +59,7 @@ const RootLayout: React.FunctionComponent<RootLayoutProps> = ({
             timeZone={intl.timeZone}
             messages={messages[locale]}
           >
-            <div className="bg-[url('../../../public/skyNight.png')] w-full h-full">
+            <div className="w-full h-full">
               <Header />
               {children}
             </div>

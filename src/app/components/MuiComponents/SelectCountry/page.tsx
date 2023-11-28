@@ -25,7 +25,12 @@ export default function CountrySelect(props: CountryProps) {
     <div className="w-fit ml-auto">
       <Autocomplete
         id="country-select-demo"
-        sx={{ width: 300 }}
+        sx={{
+          width: 300,
+          background: "#fff",
+          color: "#fff",
+          borderColor: "#fff",
+        }}
         options={countries}
         autoHighlight
         getOptionLabel={(option) => option.label}

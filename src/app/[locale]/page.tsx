@@ -38,8 +38,11 @@ export default function Home({
     }
   }, []);
   return (
-    <div className="">
+    <main className="flex ">
       <h1 className="text-white">{t("hello")}</h1>
-    </div>
+      <div>
+
+      </div>
+    </main>
   );
 }
